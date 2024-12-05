@@ -8,7 +8,7 @@ package Hoja_01;
  *
  * @author daw106
  */
-public class Ejercicio_1 {
+public class Ejercicio_01 {
 
     /**
      * @param args the command line arguments
