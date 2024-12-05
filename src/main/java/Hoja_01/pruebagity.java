@@ -15,7 +15,7 @@ public class pruebagity {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println(" gity ");
+        System.out.println(" gity    ");
     }
     
 }
