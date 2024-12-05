@@ -10,16 +10,15 @@ import java.util.Random;
  *
  * @author DAW106
  */
-public class Ejercicio_04 {
+public class Ejercicio_05 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Ejercicio 4");
-        
-        int brel[]=new int[10];
+        System.out.println("Ejercicio 5");
+                int brel[]=new int[10];
         int brel2[]=new int[10];
         
         Random r = new Random();
@@ -35,18 +34,20 @@ public class Ejercicio_04 {
         for(int i = 0;i<brel.length;i++){
             System.out.print(brel[i] + " ");
         }
-        for(int i = 0;i<brel.length;i++){
+        int temp;
+        for(int i = 0;i<brel.length/2;i++){
+          temp = brel[i];
+          brel[i] = brel[brel.length-i-1];
           
-            brel2[i]= brel[brel.length-1-i];
+          brel[brel.length -1 -i] = temp;
           
         }
         System.out.println("");
         System.out.println("Array 2");
         
-        for(int i = 0;i<brel2.length;i++){
-            System.out.print(brel2[i] + " ");
+        for(int i = 0;i<brel.length;i++){
+            System.out.print(brel[i] + " ");
         }
-        
     }
     
 }

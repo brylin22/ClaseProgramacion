@@ -10,17 +10,18 @@ import java.util.Random;
  *
  * @author DAW106
  */
-public class Ejercicio_04 {
+public class Ejercicio_07 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Ejercicio 4");
         
-        int brel[]=new int[10];
+                        System.out.println("Ejercicio 5");
+                int brel[]=new int[10];
         int brel2[]=new int[10];
+        int mayor = Integer.MIN_VALUE;
         
         Random r = new Random();
         int d = 0;
@@ -35,18 +36,25 @@ public class Ejercicio_04 {
         for(int i = 0;i<brel.length;i++){
             System.out.print(brel[i] + " ");
         }
+        System.out.println("Array 1");
+    
+        int aux =0;
+        for(int i=0;i<brel.length;i++){
+            for(int j=0;j<brel.length;j++){
+                if(brel[i]<brel.length){
+                    aux = brel[i];
+                    brel[i] = brel[j];
+                    brel[j]=aux;
+                }
+            }
+        }
+        System.out.println("Array 1");
         for(int i = 0;i<brel.length;i++){
-          
-            brel2[i]= brel[brel.length-1-i];
-          
-        }
-        System.out.println("");
-        System.out.println("Array 2");
+            System.out.print(brel[i] + " ");
         
-        for(int i = 0;i<brel2.length;i++){
-            System.out.print(brel2[i] + " ");
-        }
         
+        }
+        System.out.println("El valor mayor del array es " + mayor);
     }
     
 }
