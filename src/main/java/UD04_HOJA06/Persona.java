@@ -11,5 +11,20 @@ package UD04_HOJA06;
 public class Persona {
     
     private String nombre;
+    private String teltefono;
+
+    public Persona(String nombre, String teltefono) {
+        this.nombre = nombre;
+        this.teltefono = teltefono;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getTeltefono() {
+        return teltefono;
+    }
+    
     
 }

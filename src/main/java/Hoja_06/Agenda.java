@@ -41,38 +41,45 @@ public class Agenda {
         }
         
     }
-    public void buscar(Persona persona){
+    public void buscar(String nombre){
+        boolean encontrado = false;
         for(int i = 0; i<miPersona.length;i++){
-            if(miPersona[i]==persona){
-                System.out.println("La persona ha sido encontrada");
-                System.out.println("Esta persona esta en el index: " + i);
-                System.out.println("Numero de telefono: " + persona.getTelefono());
-                System.out.println("Nombre: " + persona.getNombre());
-                break;
+            if(miPersona[i].getNombre().equalsIgnoreCase(nombre)){
+                System.out.println(miPersona[i].toString());
+                encontrado = true;
+            }
+            if(!encontrado){
+                System.out.println("El contacto no existe.");
             }
             
         }
         
     }
-    public void modificar(Persona persona){
+    public void modificar(String nombre){
         Scanner t = new Scanner(System.in);
+        boolean encontrado = false;
         for(int i = 0; i<miPersona.length;i++){
-            if(miPersona[i]==persona){
+            if(miPersona[i].getNombre().equalsIgnoreCase(nombre)){
                 System.out.println("La persona ha sido encontrada");
                 System.out.println("Esta persona esta en el index: " + i);
-                System.out.println("Numero de telefono: " + persona.getTelefono());
-                System.out.println("Nombre: " + persona.getNombre());
+                System.out.println("Numero de telefono: " + miPersona[i].getTelefono());
+                System.out.println("Nombre: " + miPersona[i].getNombre());
                 System.out.println("Ahora introduce el nuevo nombre: ");
-                persona.setNombre(t.nextLine());
+                miPersona[i].setNombre(t.nextLine());
                 
                 System.out.println("Ahora introuce el nuevo numero de telefono: ");
-                persona.setTelefono(t.nextInt());
+                miPersona[i].setTelefono(t.nextInt());
                 
                 System.out.println("");
                 System.out.println("Se ha modificado de manera exitosa");
+                encontrado = true;  
                 break;
             }
             
+            
+        }   
+        if(!encontrado){
+            System.out.println("No hemos podido encontrar el conctacot.");
         }
         
     }
